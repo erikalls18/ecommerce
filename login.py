@@ -1,4 +1,4 @@
-import base64, re, getpass
+import base64, getpass
 from base_datos import db_ecommerce
 class Logeo():
     def __init__(self):

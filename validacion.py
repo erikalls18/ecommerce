@@ -1,6 +1,4 @@
-from base_datos import db_ecommerce
 from validate_email import validate_email
-import base64
 import re
 
 class Validador():

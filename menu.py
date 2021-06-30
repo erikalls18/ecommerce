@@ -1,5 +1,4 @@
 from registro import registro
-from productos import producto
 from menu_compras import verOpciones
 from carritto import carrito
 from login import user
