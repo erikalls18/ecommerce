@@ -33,7 +33,7 @@ class Marca():
             try:
                 seleccion=int(input("Ingrese  el código de la marca a seleccionar: "))
             except:
-                 print("Ingrese una opción valida")
+                print("Ingrese una opción valida")
             else:
                 if seleccion>=1 and seleccion<=len(self.__id_marca):
                     os.system('cls')
@@ -44,6 +44,8 @@ class Marca():
                     db_ecommerce.get_cursor().execute(query,val)
                     self.__resultado=db_ecommerce.get_cursor().fetchall()
                     codes.listar(self.__resultado)
+                else:
+                    print("Ingrese una opción valida")
 
     def añadir_carrito(self):  
                     valido=False

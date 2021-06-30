@@ -42,6 +42,7 @@ class Logeo():
                     print ("El email/contraseña  ingresados no coinciden ")
             else:      
                 print("El email o contraseña  ingresados no se encuentran  registrados ")
+            input("Presione enter para continuar...")   
 
     def logout(self):
         self.__email=""
