@@ -17,7 +17,7 @@ class MenuCompras():
                     opcion=int(input("Ingrese la opcion deseada: "))
                 except:
                     print("Seleccione una opcion valida! ")
-                if opcion>=1 or opcion<=4:
+                if opcion>=1 and opcion<=4:
                    valido=True
                 
             if opcion==1:
@@ -35,7 +35,7 @@ class MenuCompras():
             elif opcion==4:
                 break
             else:
-                print("Seleccione una opción valida!!")
-                input("Presione enter para continuar")
+                print("Seleccione una opción valida!")
+                input("Presione enter para continuar...")
         
 verOpciones=MenuCompras()

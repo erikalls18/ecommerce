@@ -22,11 +22,11 @@ class Logeo():
     def login(self):
         validacion=False
         while not validacion:
-            self.__email=input("Ingrese email: \n")
+            email=input("Ingrese email: \n")
             clave=getpass.getpass("Ingrese la contraseña :\n" )
             #clave=input("Ingrese contraseña: \n ")
             query="Select user_id,nombre, contrasenia from usuarios  where email=%s"
-            val=(self.__email,)
+            val=(email,)
             db_ecommerce.get_cursor().execute(query, val)
             resultado=db_ecommerce.get_cursor().fetchone()
             if resultado is not None:
@@ -37,17 +37,24 @@ class Logeo():
                 if encriptada==resultado[2]:
                     print("Ingreso exitoso!")
                     input("Presione enter para continuar...")
+                    self.__email = email
+                    self.__password = resultado[2]
                     
                 else:
                     print ("El email/contraseña  ingresados no coinciden ")
             else:      
                 print("El email o contraseña  ingresados no se encuentran  registrados ")
-            input("Presione enter para continuar...")   
+                salida = int(input("Presione enter para continuar, o 0 para volver: "))
+                if salida == 0:
+                    break   
 
     def logout(self):
         self.__email=""
+        self.__password=""
+        self.__nombre=""
+        self.__id=""
         print("La sesión se cerró con éxito")
-        input("Presione enter para continuar")
+        input("Presione enter para continuar...")
 
 
                 
